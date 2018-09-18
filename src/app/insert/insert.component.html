@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-3">
+      <label>Enter name: </label>
+      <input type="text" [(ngModel)]="name" >
+      <a class="btn btn-success" (click)="insert()">insert</a>
+    </div>
+</div>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>sno</th>
+      <th>name</th>
+      <th>edit</th>
+      <th>delet</th>
+    </tr>
+    <tr *ngFor="let x of getdt">
+      <td *ngIf="x._id!=temp; else elsediv">{{x._id}}</td>
+      <td *ngIf="x._id!=temp">{{x.name}}</td>
+      <td *ngIf="x._id!=temp"><a class="btn btn-success"(click)="edit(x)">edit</a></td>
+      <td><a class="btn btn-info" (click)="delete(x)">delet</a></td>
+    </tr>
+  </table>
+
+  <div>
+    <ng-template #elsediv>
+    <td>{{temp}}</td>
+    <td><input type="text" [(ngModel)]="upname"></td>
+    <td><a class="btn btn-primary" (click)="save()">save</a></td>
+  </ng-template></div>
+
+  

@@ -1,0 +1,5 @@
+{
+    "/insert/*":{
+        "target":"http://localhost:4020"
+    }
+}
